@@ -1,0 +1,49 @@
+{
+    // Use IntelliSense to learn about possible attributes.
+    // Hover to view descriptions of existing attributes.
+    // For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "type": "java",
+            "name": "Current File",
+            "request": "launch",
+            "mainClass": "${file}"
+        },
+        {
+            "type": "java",
+            "name": "FindInMountainArray",
+            "request": "launch",
+            "mainClass": "FindInMountainArray",
+            "projectName": "BinarySearch_3e806cd3"
+        },
+        {
+            "type": "java",
+            "name": "FirstAndLastPositionInSortedArray",
+            "request": "launch",
+            "mainClass": "FirstAndLastPositionInSortedArray",
+            "projectName": "BinarySearch_3e806cd3"
+        },
+        {
+            "type": "java",
+            "name": "HowToSearchInInfiniteArray",
+            "request": "launch",
+            "mainClass": "HowToSearchInInfiniteArray",
+            "projectName": "BinarySearch_3e806cd3"
+        },
+        {
+            "type": "java",
+            "name": "PeakIndexInMountainArray",
+            "request": "launch",
+            "mainClass": "PeakIndexInMountainArray",
+            "projectName": "BinarySearch_3e806cd3"
+        },
+        {
+            "type": "java",
+            "name": "RotatedBinarySearch",
+            "request": "launch",
+            "mainClass": "RotatedBinarySearch",
+            "projectName": "BinarySearch_3e806cd3"
+        }
+    ]
+}
