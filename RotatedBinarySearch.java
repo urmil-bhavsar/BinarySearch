@@ -6,8 +6,8 @@ public class RotatedBinarySearch {
     public static void main(String[] args) {
         int[] arr = { 4, 5, 6, 7, 0, 1, 2 };
         int target = 2;
-        for (int i = 0; i < arr.length - 1; i++) {
-            System.out.print(arr[i] + ",");
+        for (int i = 0; i < arr.length; i++) {
+            System.out.print(arr[i] + " ");
         }
         System.out.println();
         System.out.println("pivot " + findPivot(arr));
@@ -123,4 +123,65 @@ public class RotatedBinarySearch {
 
         return -1;
     }
+
+    // find pivot in an array with duplicate elements
+    static int findPivotWithDuplicates(int[] arr) {
+        int start = 0;
+        int end = arr.length - 1;
+        while (start <= end) {
+            int mid = start + (end - start) / 2;
+
+            // 4 cases to find pivot
+
+            // CASE 1
+            // what if mid is the last index of the array!?
+            // first check if the mid is less than the end or else 'index out of bound'
+            // error will be countered
+            // if the element at mid is greater than the next element, that is the pivot
+            // [3,4,5,2,1] let 5 = mid
+            if (mid < end && arr[mid] > arr[mid + 1]) {
+                return mid;
+            }
+
+            // CASE 2
+            // what if mid is the first index of the array!?
+            // first check if the mid is greater than start to avoid "index out of bound"
+            // error
+            // if the element at mid is smaller than the previous element, return the
+            // previous element
+            // [3,4,1,0] let 1 = mid
+            if (mid > start && arr[mid] < arr[mid - 1]) {
+                return mid - 1;
+            }
+
+            // if elements at middle, start, and end are equal then just skip the duplicates
+            // as we want to find the pivot so it is better to skip as many duplicate values
+            // as possible because the same element(potential pivot) is present at 3 places
+            if (arr[mid] == arr[start] && arr[mid] == arr[end]) {
+                // skip the duplicates
+
+                // NOTE: what if these elements at start and end were pivot?
+
+                // check if start is pivot
+                if (arr[start] > arr[start + 1]) {
+                    return start;
+                }
+                start++;
+
+                // check whether end is pivot
+                if (arr[end] < arr[end - 1]) {
+                    return end - 1;
+                }
+                end--;
+            }
+            // left side is sorted, so pivot should be in the right
+            else if (arr[start] < arr[mid] || (arr[start] == arr[mid] && arr[mid] > arr[end])) {
+                start = mid + 1;
+            } else {
+                end = mid - 1;
+            }
+        }
+        return -1;
+    }
+
 }
