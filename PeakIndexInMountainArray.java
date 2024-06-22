@@ -1,10 +1,10 @@
 public class PeakIndexInMountainArray {
     public static void main(String[] args) {
         int[] arr = { 2, 3, 4, 5, 10, 20, 10, 5, 3 };
-        System.out.println("ans:" + " " + PeakIndexInMountainArray(arr) + " " + arr[PeakIndexInMountainArray(arr)]);
+        System.out.println("ans:" + " " + peakIndexInMountainArray(arr) + " " + arr[peakIndexInMountainArray(arr)]);
     }
 
-    static int PeakIndexInMountainArray(int[] arr) {
+    static int peakIndexInMountainArray(int[] arr) {
 
         int start = 0;
         int end = arr.length - 1;
