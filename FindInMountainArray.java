@@ -1,4 +1,6 @@
 public class FindInMountainArray {
+
+    // https://leetcode.com/problems/peak-index-in-a-mountain-array/description/
     public static void main(String[] args) {
         int[] arr = { 1, 2, 3, 5, 3, 1 };
         int target = 5;
