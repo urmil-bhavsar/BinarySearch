@@ -1,7 +1,7 @@
 // how to apply binary search in a sorted matrix
 
 // the goal is to minimize the no. of rows to be searched
-// the time complexity will be O(logn + logn)
+// the time complexity will be O(logn + logm) where n = rows, m = cols
 
 import java.util.Arrays;
 
@@ -24,6 +24,10 @@ public class BinarySearchInSortedMatrix {
         int rows = matrix.length;
         int cols = matrix[0].length; // be cautious, matrix may be empty
 
+        if(rows == 0 || cols == 0){
+            return new int[]{-1,-1};
+        }
+
         if (rows == 1) {
             return binarySearch(matrix, 0, 0, cols - 1, target);
         }
@@ -37,7 +41,7 @@ public class BinarySearchInSortedMatrix {
                                           // rows i.e. row 0 & 1, 1 & 2, 2 & 3, 3 & 4, this condition will be satisfied
 
             int mid = rowStart + (rowEnd - rowStart) / 2;
-            System.out.println(matrix[mid][colMid]);
+
             if (matrix[mid][colMid] == target) {
                 return new int[] { mid, colMid };
             }
@@ -62,7 +66,7 @@ public class BinarySearchInSortedMatrix {
         }
 
         // if answer not found in the middle column, try to search in the other 4 row
-        // halfves
+        // halves
 
         // { 1, 2, 3, 4 },
         // { 5, 6, 7, 8 },
@@ -93,6 +97,15 @@ public class BinarySearchInSortedMatrix {
             // else search in the 4th half
             return binarySearch(matrix, rowStart + 1, colMid + 1, cols - 1, target);
         }
+
+        //              OR 
+        // perform binary search in both rows simnultaneously instead of searching in all halves
+        
+        //  int[] result = binarySearch(matrix, rowStart, 0, cols - 1, target);
+        //  if (result[0] != -1) {
+        //      return result;
+        //  }
+        //  return binarySearch(matrix, rowStart + 1, 0, cols - 1, target);
 
     }
 
