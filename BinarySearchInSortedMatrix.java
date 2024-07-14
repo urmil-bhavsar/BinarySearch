@@ -62,7 +62,7 @@ public class BinarySearchInSortedMatrix {
         }
 
         // if answer not found in the middle column, try to search in the other 4 row
-        // halfves
+        // halves
 
         // { 1, 2, 3, 4 },
         // { 5, 6, 7, 8 },
