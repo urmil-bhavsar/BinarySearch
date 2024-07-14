@@ -110,9 +110,6 @@ public class BinarySearchInSortedMatrix {
     }
 
 
-
-
-
     // perform binary search in the row provided between the columns provided
     static int[] binarySearch(int[][] matrix, int row, int colStart, int colEnd, int target) {
         while (colStart <= colEnd) {
